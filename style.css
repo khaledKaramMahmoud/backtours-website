@@ -1,0 +1,675 @@
+/* my fonts */
+
+@import url("https://fonts.googleapis.com/css?family=Lato|Poppins&display=swap");
+
+/* css variables */
+
+:root {
+    --primaryColor: #3fd0d4;
+    --mainWhite: #fff;
+    --offWhite: #f7f7f7;
+    --mainBlack: #222;
+    --mainGrey: #ececec;
+    --darkGrey: #afafaf;
+    --mainTransition: all 0.3s linear;
+    --mainSpacing: 0.25rem;
+    --lightShadow: 2px 5px 3px 0 rgba(0, 0, 0, 0.25);
+    --darkShadow: 4px 10px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+/* reset */
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* body */
+
+body {
+    font-family: "Lato", sans-serif;
+    background: var(--offWhite);
+    color: var(--mainBlack);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+
+/* global styles */
+
+img:not(.nav_logo) {
+    width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 1.25rem;
+    letter-spacing: var(--mainSpacing);
+}
+
+h1 {
+    font-size: 3.3rem;
+}
+
+h2 {
+    font-size: 2.3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+p {
+    margin-bottom: 1.25rem;
+    line-height: 2;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* special global styles */
+
+
+/* botton */
+
+.btn_white,
+.btn_primary {
+    color: var(--mainWhite);
+    letter-spacing: var(--mainSpacing);
+    border: 2px solid var(--offWhite);
+    padding: 2px 0.8rem;
+    display: inline-block;
+    transition: var(--mainTransition);
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
+.btn_white:hover {
+    background: var(--mainWhite);
+    color: var(--primaryColor);
+}
+
+.btn_primary {
+    background: var(--primaryColor);
+    color: var(--mainWhite);
+    border-color: var(--primaryColor);
+}
+
+.btn_primary:hover {
+    background: transparent;
+    color: var(--primaryColor);
+}
+
+
+/* section */
+
+.section {
+    padding: 5rem 0;
+}
+
+.title_wraber {
+    margin-bottom: 2rem;
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.subtitle {
+    color: var(--primaryColor);
+}
+
+.section_center {
+    width: 85vw;
+    margin: 4rem auto 2rem auto;
+    max-width: 1170px;
+}
+
+
+/* start header */
+
+
+/* navbar */
+
+.nav_icons {
+    display: none;
+}
+
+.nav_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav_toggle {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--primaryColor);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--mainTransition);
+}
+
+.nav_toggle:hover {
+    transform: scale(1.2);
+}
+
+.nav_link {
+    display: block;
+    padding: 1rem 2rem;
+    color: var(--mainBlack);
+    text-transform: capitalize;
+    letter-spacing: var(--mainSpacing);
+    font-weight: bold;
+    transition: var(--mainTransition);
+}
+
+.nav_link:hover {
+    color: var(--primaryColor);
+    background: var(--darkGrey);
+    padding-left: 2.5rem;
+}
+
+
+/***** java script *****/
+
+
+/* height of links is 289 */
+
+.nav_links {
+    height: 0;
+    overflow: hidden;
+    transition: var(--mainTransition);
+}
+
+.show_links {
+    height: 289px;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: var(--lightShadow);
+    background: var(--mainGrey);
+    z-index: 1;
+    transition: var(--mainTransition);
+}
+
+@media only screen and (min-width: 768px) {
+    .nav_toggle {
+        display: none;
+    }
+    .nav_icons {
+        display: flex;
+    }
+    .nav_links {
+        display: flex;
+        height: auto;
+    }
+    .nav_center {
+        max-width: 1170px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+    .nav_header {
+        padding: 0;
+    }
+    .nav_link {
+        padding: 0;
+    }
+    .nav_link:hover {
+        padding: 0;
+        background: transparent;
+    }
+    /* after reset values from small screen work with actual one now */
+    .navbar {
+        padding: 1rem 2rem;
+    }
+    .nav_link {
+        margin-right: 1rem;
+    }
+    .nav_icon {
+        margin-right: 0.7rem;
+        font-size: 1.5rem;
+        color: var(--primaryColor);
+        transition: var(--mainTransition);
+    }
+    .nav_icon:hover {
+        color: var(--darkGrey);
+        transform: translateY(-15%);
+    }
+}
+
+
+/* the project face */
+
+.project_face {
+    min-height: calc( 100vh - 62px);
+    /* minus the navbar size to be 100 from my screen */
+    background: var(--primaryColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner {
+    text-align: center;
+    color: var(--mainWhite);
+    padding: 0 5px;
+}
+
+.face_title {
+    letter-spacing: 0.3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.face_text {
+    margin: 0 auto;
+    width: 88%;
+    letter-spacing: var(--mainSpacing);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+
+/* btn added to the special global styles */
+
+@media only screen and (min-width: 768px) {
+    .project_face {
+        background: linear-gradient(rgba(63, 208, 212, 0.7), rgba(0, 0, 0, 0.7)), url("images/m.jpeg") center/cover no-repeat fixed;
+    }
+    .face_title {
+        font-size: 4.5rem;
+    }
+    .face_text {
+        width: 70%;
+    }
+    .btn_white {
+        padding: 0.6rem 1.4rem;
+    }
+}
+
+
+/* end header */
+
+
+/* start About */
+
+.about {
+    background: var(--mainWhite);
+}
+
+
+/* section & titles & center section added to specific global styles */
+
+.about_img,
+.about_info {
+    margin-bottom: 3rem;
+}
+
+.about_info h3 {
+    text-transform: uppercase;
+}
+
+@media only screen and (min-width: 992px) {
+    .about_center {
+        display: flex;
+        justify-content: space-between;
+    }
+    .about_img,
+    .about_info {
+        flex: 0 0 calc(50% - 2rem);
+        /*no grow or shrink and minus margin*/
+        margin-bottom: 0;
+        align-self: center;
+    }
+    .about_img::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border: 0.5rem solid var(--primaryColor);
+        top: -1.5rem;
+        left: -1.5rem;
+    }
+    .about_img {
+        position: relative;
+    }
+    .about_pic {
+        position: relative;
+        /*to make photo above the border*/
+    }
+}
+
+
+/* end About */
+
+
+/* start service */
+
+.service {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.service_icon {
+    background: var(--primaryColor);
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+}
+
+.service_title {
+    text-transform: uppercase;
+}
+
+.service_text {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+@media only screen and (min-width: 576px) {
+    .services_center {
+        display: flex;
+        /* do this after making flex  */
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .service {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .service {
+        flex: 0 0 calc(33.3333% - 1rem);
+    }
+}
+
+@media only screen and (min-width: 1170px) {
+    .service {
+        display: flex;
+        text-align: left;
+    }
+    .service_icon {
+        align-self: start;
+    }
+    .service_info {
+        padding-left: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .service_text {
+        width: 90%;
+        margin: 0;
+    }
+}
+
+
+/* start featured tours */
+
+.featured {
+    background: var(--mainWhite);
+}
+
+.tour_card {
+    margin-bottom: 4rem;
+    box-shadow: var(--lightShadow);
+    transition: var(--mainTransition);
+}
+
+.tour_card:hover {
+    box-shadow: var(--darkShadow);
+}
+
+.tour_img_container {
+    position: relative;
+}
+
+.tour_date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--primaryColor);
+    padding: 0.25rem 0.5rem;
+}
+
+.tour_footer {
+    padding: 1.25rem 1.5rem;
+}
+
+.tour_title {
+    text-transform: capitalize;
+}
+
+.tour_countrey {
+    color: var(--primaryColor);
+    text-transform: capitalize;
+}
+
+.tour_info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tour_datails p {
+    color: var(--darkGrey);
+    line-height: 0.2rem;
+    text-transform: capitalize;
+    letter-spacing: 0.8px;
+}
+
+.tour_link {
+    text-align: center;
+}
+
+
+/* btn_primary added to special global styles */
+
+@media only screen and (min-width: 768px) {
+    .featured_center {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .tour_card {
+        flex: 0 0 calc(50% - 1rem);
+    }
+    .btn_primary {
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media only screen and (min-width: 1170px) {
+    .tour_card {
+        flex: 0 0 calc(33.333% - 1rem);
+    }
+}
+
+
+/* start gallery */
+
+.gallery {
+    background: var(--darkGrey);
+}
+
+.gallery_img_container {
+    position: relative;
+    background: var(--primaryColor);
+    /* to make opacity in hovering*/
+}
+
+.gallery_icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
+    /* to set in the center*/
+    color: var(--mainWhite);
+    transition: var(--mainTransition);
+    opacity: 0;
+}
+
+.gallery_img {
+    transition: var(--mainTransition);
+}
+
+.gallery_img_container:hover .gallery_img {
+    opacity: 0.6;
+}
+
+.gallery_img_container:hover .gallery_icon {
+    opacity: 1;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    .gallery_center {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .gallery_img_container {
+        flex: 0 0 50%;
+        /*didn't use calc cause i'm not need to margin*/
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .gallery_img_container {
+        flex: 0 0 25%;
+    }
+}
+
+
+/* end gallery */
+
+
+/* start deals */
+
+.input_group {
+    width: 80vw;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.form_control {
+    flex: 1 1 auto;
+    /* grow and shrink if you need this*/
+}
+
+.form_control,
+.btn_submit {
+    padding: 0.3rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.1rem;
+    background: transparent;
+    text-transform: uppercase;
+    outline: none;
+    border: 2px solid var(--primaryColor);
+}
+
+::placeholder {
+    font-family: "Lato", sans-serif;
+    color: var(--mainBlack);
+}
+
+.btn_submit {
+    border-left: none;
+    cursor: pointer;
+    transition: var(--mainTransition);
+}
+
+.btn_submit:hover {
+    color: var(--mainWhite);
+    background: var(--primaryColor);
+}
+
+
+/* end deals */
+
+
+/* start footer */
+
+.footer {
+    background: var(--mainBlack);
+    color: var(--mainWhite);
+    text-align: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.footer_links,
+.footer_icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer_link {
+    color: var(--mainWhite);
+    font-size: 1.1rem;
+    margin-right: 1rem;
+    text-transform: capitalize;
+    letter-spacing: var(--mainSpacing);
+    transition: var(--mainTransition);
+}
+
+.footer_link:hover {
+    color: var(--primaryColor);
+}
+
+.footer_icon {
+    color: var(--mainWhite);
+    font-size: 1.8rem;
+    margin-right: 1rem;
+    transition: var(--mainTransition);
+}
+
+.footer_icon:hover {
+    color: var(--primaryColor);
+    transform: translateY(-15%);
+}
+
+.copyright {
+    text-transform: capitalize;
+    letter-spacing: var(--mainSpacing);
+}
+
+
+/* end footer */
